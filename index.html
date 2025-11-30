@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AT Abhijith | 3D Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Three.js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+
+<body class="body">
+    <header class="nav-container">
+        <nav class="nav-bar">
+            <div class="logo">
+                <h2>AT<span class="highlight">.</span></h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <section id="home" class="home-section">
+        <div id="canvas-container"></div>
+        <div class="home-container">
+            <div class="home-content">
+                <p class="greeting">Welcome to my world</p>
+                <h1>Hi, I'm <span class="highlight">Abhijith</span></h1>
+                <h2 class="role">Full Stack Web Developer</h2>
+                <p class="description">I build pixel-perfect, engaging, and accessible digital experiences. Expert in
+                    the MERN stack and modern web technologies.</p>
+
+                <div class="cta-group">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                </div>
+
+                <div class="social-links-hero">
+                    <a href="https://github.com/4bjith" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/abhijith-4bjith" target="_blank" title="LinkedIn"><i
+                            class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="home-image">
+                <div class="image-wrapper">
+                    <img src="images/hero-image.png" alt="Abhijith">
+                </div>
+            </div>
+        </div>
+        <div class="scroll-down">
+            <a href="#about">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+        </div>
+    </section>
+
+    <section id="about" class="section about-section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Hi, I'm A T Abhijith — a passionate Software Developer specializing in the MERN stack. I love
+                        building full-stack web applications and exploring new technologies. I enjoy transforming
+                        creative ideas into real-world digital solutions. Currently, I am deep-diving into Next.js &
+                        TypeScript.</p>
+                    <p>I am open to work and freelance projects. Let's build something amazing together!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="section skills-section">
+        <div class="container">
+            <h2 class="section-title">Professional Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card"><i class="fab fa-html5"></i><span>HTML5</span></div>
+                <div class="skill-card"><i class="fab fa-css3-alt"></i><span>CSS3</span></div>
+                <div class="skill-card"><i class="fab fa-js"></i><span>JavaScript</span></div>
+                <div class="skill-card"><i class="fab fa-react"></i><span>React.js</span></div>
+                <div class="skill-card"><i class="fab fa-node"></i><span>Node.js</span></div>
+                <div class="skill-card"><i class="fas fa-server"></i><span>Express.js</span></div>
+                <div class="skill-card"><i class="fas fa-database"></i><span>MongoDB</span></div>
+                <div class="skill-card"><i class="fas fa-wind"></i><span>Tailwind CSS</span></div>
+                <div class="skill-card"><i class="fas fa-code"></i><span>Next.js</span></div>
+                <div class="skill-card"><i class="fab fa-git-alt"></i><span>Git</span></div>
+                <div class="skill-card"><i class="fab fa-github"></i><span>GitHub</span></div>
+                <div class="skill-card"><i class="fab fa-java"></i><span>Java</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="section services-section">
+        <div class="container">
+            <h2 class="section-title">My Services</h2>
+            <div class="services-list">
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="service-info">
+                        <h3>Full Stack Web Development</h3>
+                        <p>Building robust and scalable web applications using the MERN stack (MongoDB, Express, React,
+                            Node.js). I handle both client-side and server-side logic to create seamless experiences.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fab fa-react"></i>
+                    </div>
+                    <div class="service-info">
+                        <h3>Frontend Development</h3>
+                        <p>Creating responsive, interactive, and visually appealing user interfaces with React.js and
+                            modern CSS frameworks like Tailwind. I focus on performance and accessibility.</p>
+                    </div>
+                </div>
+
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <div class="service-info">
+                        <h3>Backend Development</h3>
+                        <p>Developing secure and efficient server-side logic, RESTful APIs, and database management. I
+                            ensure your application's data is handled safely and reliably.</p>
+                    </div>
+                </div>
+
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <div class="service-info">
+                        <h3>Website Designing</h3>
+                        <p>Designing modern, user-friendly website layouts that align with your brand identity. I
+                            prioritize user experience (UX) and intuitive navigation.</p>
+                    </div>
+                </div>
+
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-vial"></i>
+                    </div>
+                    <div class="service-info">
+                        <h3>Web App Testing</h3>
+                        <p>Ensuring the quality and reliability of web applications through rigorous testing. I identify
+                            bugs and performance issues to deliver a flawless product.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section projects-section">
+        <div class="container">
+            <h2 class="section-title">My Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>E-Commerce</h3>
+                        <p>A full-stack e-commerce application built with JavaScript.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/4bjith/E-Commerce" target="_blank">View Code <i
+                                    class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>ToDo App</h3>
+                        <p>A simple and efficient ToDo list application to manage daily tasks.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/4bjith/ToDo" target="_blank">View Code <i
+                                    class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>Calculator</h3>
+                        <p>A functional calculator built with HTML, CSS, and JavaScript.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/4bjith/Calculator" target="_blank">View Code <i
+                                    class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>Portfolio</h3>
+                        <p>My personal portfolio website showcasing my skills and projects.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/4bjith/portfolio" target="_blank">View Code <i
+                                    class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <h2 class="section-title">Contact Me</h2>
+            <div class="contact-wrapper">
+                <form class="contact-form">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+                <div class="social-connect">
+                    <h3>Connect with me</h3>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/abhijith-4bjith" target="_blank"
+                            class="social-icon linkedin"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/4bjith" target="_blank" class="social-icon github"><i
+                                class="fab fa-github"></i></a>
+                        <a href="https://www.facebook.com/abhijithabhi.at/" class="social-icon facebook"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/_._4b_jith_._/" class="social-icon instagram"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon telegram"><i class="fab fa-telegram-plane"></i></a>
+                        <a href="mailto:abhijithatzz@gmail.com" class="social-icon gmail"><i
+                                class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2024 AT Abhijith. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
