@@ -9,7 +9,9 @@
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Montserrat:wght@900&display=swap"
+        rel="stylesheet">
     <!-- Three.js CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
@@ -18,7 +20,7 @@
     <header class="nav-container">
         <nav class="nav-bar">
             <div class="logo">
-                <h2>AT<span class="highlight">.</span></h2>
+                <h2>ABHIJITH<span class="highlight">.</span></h2>
             </div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
@@ -28,47 +30,55 @@
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <div class="hamburger">
-                <i class="fas fa-bars"></i>
+            <div class="nav-actions">
+                <button id="theme-toggle" class="theme-toggle" title="Toggle Light/Dark Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
             </div>
         </nav>
     </header>
 
-    <section id="home" class="home-section">
+    <section id="home" class="banner">
         <div id="canvas-container"></div>
-        <div class="home-container">
-            <div class="home-content">
-                <p class="greeting">Welcome to my world</p>
-                <h1>Hi, I'm <span class="highlight">Abhijith</span></h1>
-                <h2 class="role">Full Stack Web Developer</h2>
-                <p class="description">I build pixel-perfect, engaging, and accessible digital experiences. Expert in
-                    the MERN stack and modern web technologies.</p>
-
-                <div class="cta-group">
-                    <a href="#projects" class="btn btn-primary">View My Work</a>
-                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
-                </div>
-
-                <div class="social-links-hero">
-                    <a href="https://github.com/4bjith" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/abhijith-4bjith" target="_blank" title="LinkedIn"><i
-                            class="fab fa-linkedin"></i></a>
-                </div>
+        <div class="slider" style="--quantity: 10">
+            <div class="item" style="--position: 1"><img src="images/hero-image.png" alt="Abhijith Portrait"></div>
+            <div class="item" style="--position: 2"><img src="images/trendquik.png" alt="TrendQuik Project"></div>
+            <div class="item" style="--position: 3"><img
+                    src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=600"
+                    alt="Development"></div>
+            <div class="item" style="--position: 4"><img src="images/voyago.png" alt="Voyago Project"></div>
+            <div class="item" style="--position: 5"><img
+                    src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=600"
+                    alt="Cyber Security"></div>
+            <div class="item" style="--position: 6"><img src="images/voyago-driver.png" alt="Voyago Driver Project">
             </div>
-            <div class="home-image">
-                <div class="image-wrapper">
-                    <img src="images/hero-image.png" alt="Abhijith">
-                </div>
-            </div>
+            <div class="item" style="--position: 7"><img
+                    src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=600"
+                    alt="Technology Network"></div>
+            <div class="item" style="--position: 8"><img
+                    src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=600"
+                    alt="Coding"></div>
+            <div class="item" style="--position: 9"><img
+                    src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=600"
+                    alt="Workplace"></div>
+            <div class="item" style="--position: 10"><img
+                    src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=600"
+                    alt="AI Concept"></div>
         </div>
-        <div class="scroll-down">
-            <a href="#about">
-                <span></span>
-                <span></span>
-                <span></span>
-            </a>
+        <div class="content">
+            <h1 data-content="ABHIJITH">ABHIJITH</h1>
+            <div class="author">
+                <h2>DEVELOPER</h2>
+                <p><b>Full Stack</b> Web Developer</p>
+                <p>Building pixel-perfect, engaging, and accessible digital experiences.</p>
+            </div>
+            <div class="model"><img src="images/vc (1).png" alt="Abhijith"></div>
         </div>
     </section>
+
 
     <section id="about" class="section about-section">
         <div class="container">
@@ -76,7 +86,7 @@
             <div class="about-content">
                 <div class="about-text">
                     <p>
-                        Hi! I’m <strong>A T Abhijith</strong>, a Software Developer who loves building things from the
+                        Hi,<br/>   I’m <strong>A T Abhijith</strong>, a Software Developer who loves building things from the
                         ground up.
                         I got into web development simply because I was curious about how websites work—and that
                         curiosity

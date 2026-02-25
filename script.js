@@ -115,4 +115,32 @@ document.addEventListener('DOMContentLoaded', () => {
     initThreeJS();
     initNav();
     initForm();
+    initThemeToggle();
 });
+
+// Theme Toggle (Dark / Light Mode)
+const initThemeToggle = () => {
+    const toggleBtn = document.getElementById('theme-toggle');
+    const icon = toggleBtn?.querySelector('i');
+    if (!toggleBtn) return;
+
+    // Load saved preference
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+        document.body.classList.add('light-mode');
+        icon.classList.replace('fa-moon', 'fa-sun');
+    }
+
+    toggleBtn.addEventListener('click', () => {
+        document.body.classList.toggle('light-mode');
+        const isLight = document.body.classList.contains('light-mode');
+        // Swap icon
+        if (isLight) {
+            icon.classList.replace('fa-moon', 'fa-sun');
+        } else {
+            icon.classList.replace('fa-sun', 'fa-moon');
+        }
+        // Persist preference
+        localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    });
+};
