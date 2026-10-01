@@ -68,6 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initCustomCursor();
     initNavigation();
     initScrollReveal();
+    initProjectsFilter();
     initSkillsFilter();
     initServicesAccordion();
     initCaseStudyModal();
@@ -88,9 +89,7 @@ function initTheme() {
     const savedTheme = localStorage.getItem('abhijith-theme');
     const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     
-    // Default to dark mode unless explicitly saved as light or system prefers light without saved setting
-    const isLight = savedTheme === 'light' || (!savedTheme && !systemPrefersDark && false);
-
+    // Default to dark mode unless explicitly saved as light
     if (savedTheme === 'light') {
         document.body.classList.add('light-mode');
         themeIcon.className = 'fas fa-sun';
@@ -125,7 +124,6 @@ function initCustomCursor() {
     const ring = document.getElementById('cursor-ring');
     if (!dot || !ring) return;
 
-    // Only activate on mouse/fine pointer devices
     if (window.matchMedia('(pointer: coarse)').matches) return;
 
     let mouseX = window.innerWidth / 2;
@@ -152,7 +150,7 @@ function initCustomCursor() {
     }
 
     // Hover state over interactive elements
-    const interactiveElements = document.querySelectorAll('a, button, input, textarea, .project-media, .service-row, .skill-card');
+    const interactiveElements = document.querySelectorAll('a, button, input, textarea, .editorial-project-card, .service-accordion-item, .skill-card, .social-pill-link');
     interactiveElements.forEach(el => {
         el.addEventListener('mouseenter', () => ring.classList.add('cursor-hover'));
         el.addEventListener('mouseleave', () => ring.classList.remove('cursor-hover'));
@@ -204,7 +202,6 @@ function initNavigation() {
         link.addEventListener('click', () => toggleDrawer(false));
     });
 
-    // Close on Escape Key
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && drawer.classList.contains('open')) {
             toggleDrawer(false);
@@ -238,7 +235,6 @@ function initNavigation() {
 // 6. INTERSECTION OBSERVER SCROLL REVEAL
 // ==========================================================================
 function initScrollReveal() {
-    // Respect reduced motion
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-revealed'));
         return;
@@ -261,17 +257,52 @@ function initScrollReveal() {
 }
 
 // ==========================================================================
-// 7. SKILLS CATEGORY FILTER
+// 7. PROJECTS CATEGORY FILTER
+// ==========================================================================
+function initProjectsFilter() {
+    const filterTabs = document.querySelectorAll('.btn-project-tab');
+    const projectCards = document.querySelectorAll('.editorial-project-card');
+
+    if (!filterTabs.length || !projectCards.length) return;
+
+    filterTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            filterTabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+
+            const filter = tab.getAttribute('data-project-filter');
+
+            projectCards.forEach(card => {
+                const cat = card.getAttribute('data-cat') || '';
+                if (filter === 'all' || cat.includes(filter)) {
+                    card.style.display = 'flex';
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, 40);
+                } else {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(12px)';
+                    setTimeout(() => {
+                        card.style.display = 'none';
+                    }, 200);
+                }
+            });
+        });
+    });
+}
+
+// ==========================================================================
+// 8. SKILLS CATEGORY FILTER
 // ==========================================================================
 function initSkillsFilter() {
-    const filterButtons = document.querySelectorAll('.filter-btn');
+    const filterButtons = document.querySelectorAll('#skills .btn-project-tab');
     const skillCards = document.querySelectorAll('.skill-card');
 
     if (!filterButtons.length || !skillCards.length) return;
 
     filterButtons.forEach(btn => {
         btn.addEventListener('click', () => {
-            // Toggle active state
             filterButtons.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
 
@@ -284,7 +315,7 @@ function initSkillsFilter() {
                     setTimeout(() => {
                         card.style.opacity = '1';
                         card.style.transform = 'translateY(0)';
-                    }, 50);
+                    }, 40);
                 } else {
                     card.style.opacity = '0';
                     card.style.transform = 'translateY(10px)';
@@ -298,28 +329,30 @@ function initSkillsFilter() {
 }
 
 // ==========================================================================
-// 8. SERVICES ACCORDION
+// 9. SERVICES ACCORDION (MATCHING REFERENCE IMAGE 3)
 // ==========================================================================
 function initServicesAccordion() {
-    const serviceRows = document.querySelectorAll('.service-row');
+    const items = document.querySelectorAll('.service-accordion-item');
 
-    serviceRows.forEach(row => {
+    items.forEach(item => {
         const toggle = () => {
-            const isExpanded = row.classList.contains('expanded');
-            // Close other rows for clean single view
-            serviceRows.forEach(r => {
-                r.classList.remove('expanded');
-                r.setAttribute('aria-expanded', 'false');
+            const isActive = item.classList.contains('active');
+            
+            // Close all items
+            items.forEach(i => {
+                i.classList.remove('active');
+                i.setAttribute('aria-expanded', 'false');
             });
 
-            if (!isExpanded) {
-                row.classList.add('expanded');
-                row.setAttribute('aria-expanded', 'true');
+            // Toggle selected item
+            if (!isActive) {
+                item.classList.add('active');
+                item.setAttribute('aria-expanded', 'true');
             }
         };
 
-        row.addEventListener('click', toggle);
-        row.addEventListener('keydown', (e) => {
+        item.addEventListener('click', toggle);
+        item.addEventListener('keydown', (e) => {
             if (e.key === 'Enter' || e.key === ' ') {
                 e.preventDefault();
                 toggle();
@@ -329,7 +362,7 @@ function initServicesAccordion() {
 }
 
 // ==========================================================================
-// 9. CASE STUDY MODAL DIALOG
+// 10. CASE STUDY MODAL DIALOG
 // ==========================================================================
 function initCaseStudyModal() {
     const modal = document.getElementById('project-modal');
@@ -348,10 +381,8 @@ function initCaseStudyModal() {
         modalCategory.textContent = data.category;
         modalTitle.textContent = data.title;
 
-        // Build feature list items
         const featuresHtml = data.features.map(f => `<li>${f}</li>`).join('');
-        // Build stack badges
-        const stackHtml = data.stack.map(s => `<span class="stack-pill">${s}</span>`).join('');
+        const stackHtml = data.stack.map(s => `<span class="project-pill-tag">${s}</span>`).join('');
 
         modalBody.innerHTML = `
             <div>
@@ -366,25 +397,24 @@ function initCaseStudyModal() {
             </div>
             <div>
                 <h4 class="modal-section-title">Technology Stack</h4>
-                <div class="project-stack" style="margin-top: 8px;">
+                <div class="editorial-pill-row" style="margin-top: 8px;">
                     ${stackHtml}
                 </div>
             </div>
         `;
 
-        // Build action buttons
         let actionsHtml = '';
         if (data.liveUrl) {
             actionsHtml += `
-                <a href="${data.liveUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                <a href="${data.liveUrl}" target="_blank" rel="noopener noreferrer" class="btn-hero-cta">
                     <span>Visit Live Site</span>
-                    <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                    <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
                 </a>
             `;
         }
         if (data.githubUrl) {
             actionsHtml += `
-                <a href="${data.githubUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                <a href="${data.githubUrl}" target="_blank" rel="noopener noreferrer" class="btn-project-tab" style="padding: 10px 22px;">
                     <span>View Repository</span>
                     <i class="fab fa-github" aria-hidden="true"></i>
                 </a>
@@ -404,11 +434,9 @@ function initCaseStudyModal() {
         document.body.style.overflow = '';
     };
 
-    // Attach trigger listeners
-    document.querySelectorAll('.btn-case-study, .project-media').forEach(trigger => {
-        trigger.addEventListener('click', (e) => {
-            const card = trigger.closest('[data-project]');
-            const projectId = card ? card.getAttribute('data-project') : trigger.getAttribute('data-project');
+    document.querySelectorAll('.editorial-project-card').forEach(card => {
+        card.addEventListener('click', (e) => {
+            const projectId = card.getAttribute('data-project');
             if (projectId) {
                 e.preventDefault();
                 openModal(projectId);
@@ -429,7 +457,7 @@ function initCaseStudyModal() {
 }
 
 // ==========================================================================
-// 10. COPY EMAIL & TOAST NOTIFICATION
+// 11. COPY EMAIL & TOAST NOTIFICATION
 // ==========================================================================
 function showToast(message = 'Email copied to clipboard!') {
     const toast = document.getElementById('toast-notice');
@@ -445,17 +473,15 @@ function showToast(message = 'Email copied to clipboard!') {
 
 function initClipboard() {
     const copyBtn = document.getElementById('btn-copy-email');
+    const heroEmailBtn = document.getElementById('hero-email-pill');
     const emailText = document.getElementById('copy-email-text');
 
-    if (!copyBtn || !emailText) return;
-
-    copyBtn.addEventListener('click', async () => {
-        const text = emailText.textContent.trim();
+    const copyHandler = async () => {
+        const text = 'abhijithatzz@gmail.com';
         try {
             if (navigator.clipboard && window.isSecureContext) {
                 await navigator.clipboard.writeText(text);
             } else {
-                // Fallback for non-https or older environments
                 const tempInput = document.createElement('textarea');
                 tempInput.value = text;
                 document.body.appendChild(tempInput);
@@ -464,20 +490,18 @@ function initClipboard() {
                 document.body.removeChild(tempInput);
             }
             showToast('Email address copied to clipboard!');
-            const originalHtml = copyBtn.innerHTML;
-            copyBtn.innerHTML = '<i class="fas fa-check" aria-hidden="true"></i><span>Copied!</span>';
-            setTimeout(() => {
-                copyBtn.innerHTML = originalHtml;
-            }, 2000);
         } catch (err) {
             console.error('Clipboard copy failed:', err);
             showToast(`Contact: ${text}`);
         }
-    });
+    };
+
+    if (copyBtn) copyBtn.addEventListener('click', copyHandler);
+    if (heroEmailBtn) heroEmailBtn.addEventListener('click', copyHandler);
 }
 
 // ==========================================================================
-// 11. CONTACT FORM HANDLER
+// 12. CONTACT FORM HANDLER
 // ==========================================================================
 function initContactForm() {
     const form = document.getElementById('contact-form');
@@ -507,7 +531,6 @@ function initContactForm() {
             return;
         }
 
-        // Simulate fast submission feedback
         const originalBtnText = submitBtn.innerHTML;
         submitBtn.disabled = true;
         submitBtn.innerHTML = '<i class="fas fa-circle-notch fa-spin" aria-hidden="true"></i><span>Sending...</span>';
@@ -530,7 +553,7 @@ function initContactForm() {
 }
 
 // ==========================================================================
-// 12. BACK TO TOP SCROLL
+// 13. BACK TO TOP SCROLL
 // ==========================================================================
 function initBackToTop() {
     const backToTopBtn = document.getElementById('btn-back-to-top');

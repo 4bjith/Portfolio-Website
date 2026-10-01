@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AT Abhijith — Full Stack Web Developer</title>
-    <meta name="description" content="Portfolio of A T Abhijith, a Full Stack Web Developer specializing in modern web applications, MERN stack development, and interactive digital experiences.">
-    <meta name="keywords" content="Abhijith, AT Abhijith, Full Stack Developer, MERN Stack, React Developer, Node.js, Web Developer Portfolio, India">
+    <title>AT Abhijith — Full Stack & AI Systems Engineer</title>
+    <meta name="description" content="Portfolio of A T Abhijith, a Full Stack Web Developer & AI Systems Engineer specializing in modern web applications, MERN stack, and workflow automation.">
+    <meta name="keywords" content="Abhijith, AT Abhijith, Full Stack Developer, MERN Stack, AI Workflow, Node Sidecar, React Developer, Node.js, Portfolio">
     <meta name="author" content="A T Abhijith">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://4bjith.github.io/Portfolio-Website/">
@@ -14,15 +14,15 @@
     <!-- Open Graph / Social Media -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://4bjith.github.io/Portfolio-Website/">
-    <meta property="og:title" content="AT Abhijith — Full Stack Web Developer">
-    <meta property="og:description" content="Portfolio of A T Abhijith, a Full Stack Web Developer specializing in modern web applications and MERN stack development.">
+    <meta property="og:title" content="AT Abhijith — Full Stack & AI Systems Engineer">
+    <meta property="og:description" content="Building modern web applications and AI workflow systems from interface to infrastructure.">
     <meta property="og:image" content="images/abhijith-monochrome.png">
 
     <!-- Twitter / X Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://4bjith.github.io/Portfolio-Website/">
-    <meta name="twitter:title" content="AT Abhijith — Full Stack Web Developer">
-    <meta name="twitter:description" content="Building modern web applications from interface to infrastructure.">
+    <meta name="twitter:title" content="AT Abhijith — Full Stack & AI Systems Engineer">
+    <meta name="twitter:description" content="Building modern web applications and AI workflow systems from interface to infrastructure.">
     <meta name="twitter:image" content="images/abhijith-monochrome.png">
 
     <!-- Favicon -->
@@ -49,30 +49,30 @@
     <!-- Navigation Header -->
     <header class="site-header" id="site-header">
         <div class="container nav-wrapper">
-            <a href="#hero" class="brand" aria-label="Abhijith Portfolio Home">
-                <span class="brand-logo">AT<span class="dot">.</span></span>
-                <span class="brand-status">
-                    <span class="status-pulse" aria-hidden="true"></span>
-                    <span>Available</span>
-                </span>
+            <!-- Left Pill: Status -->
+            <a href="#contact" class="nav-status-pill" aria-label="Availability Status">
+                <span class="status-dot" aria-hidden="true"></span>
+                <span>Available for New Project</span>
             </a>
 
+            <!-- Center Menu with Counters -->
             <nav class="nav-menu" aria-label="Main Navigation">
-                <a href="#projects" class="nav-link">Work</a>
-                <a href="#about" class="nav-link">About</a>
-                <a href="#skills" class="nav-link">Skills</a>
-                <a href="#services" class="nav-link">Services</a>
-                <a href="#journey" class="nav-link">Timeline</a>
-                <a href="#contact" class="nav-link">Contact</a>
+                <a href="#projects" class="nav-link"><span>Work</span> <span class="nav-count">[3]</span></a>
+                <a href="#services" class="nav-link"><span>Service</span> <span class="nav-count">[5]</span></a>
+                <a href="#about" class="nav-link"><span>About</span></a>
+                <a href="#skills" class="nav-link"><span>Skills</span> <span class="nav-count">[22]</span></a>
+                <a href="#journey" class="nav-link"><span>Experience</span></a>
+                <a href="#contact" class="nav-link"><span>Contact</span></a>
             </nav>
 
+            <!-- Right Actions -->
             <div class="nav-actions">
                 <button id="theme-toggle" class="btn-theme-toggle" type="button" aria-label="Toggle light and dark theme" title="Toggle theme">
                     <i class="fas fa-moon" id="theme-icon" aria-hidden="true"></i>
                 </button>
-                <a href="#contact" class="btn-nav-cta">
+                <a href="#contact" class="btn-pill-cta">
                     <span>Let's Talk</span>
-                    <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
                 </a>
                 <button id="nav-hamburger" class="hamburger" type="button" aria-label="Open mobile menu" aria-expanded="false" aria-controls="mobile-drawer">
                     <i class="fas fa-bars" aria-hidden="true"></i>
@@ -85,88 +85,308 @@
     <div class="drawer-backdrop" id="drawer-backdrop" aria-hidden="true"></div>
     <div class="mobile-drawer" id="mobile-drawer" aria-label="Mobile Navigation" role="dialog" aria-modal="true">
         <div class="drawer-links">
-            <a href="#projects" class="drawer-nav-item"><span>Selected Work</span> <span class="index">01</span></a>
-            <a href="#about" class="drawer-nav-item"><span>About Me</span> <span class="index">02</span></a>
-            <a href="#skills" class="drawer-nav-item"><span>Technical Skills</span> <span class="index">03</span></a>
-            <a href="#services" class="drawer-nav-item"><span>Services</span> <span class="index">04</span></a>
-            <a href="#journey" class="drawer-nav-item"><span>Journey</span> <span class="index">05</span></a>
-            <a href="#contact" class="drawer-nav-item"><span>Contact</span> <span class="index">06</span></a>
+            <a href="#projects" class="drawer-nav-item"><span>Selected Work</span> <span class="nav-count">[3]</span></a>
+            <a href="#services" class="drawer-nav-item"><span>Services</span> <span class="nav-count">[5]</span></a>
+            <a href="#about" class="drawer-nav-item"><span>About Me</span></a>
+            <a href="#skills" class="drawer-nav-item"><span>Skills Matrix</span> <span class="nav-count">[22]</span></a>
+            <a href="#journey" class="drawer-nav-item"><span>Experience</span></a>
+            <a href="#contact" class="drawer-nav-item"><span>Contact</span></a>
         </div>
         <div class="drawer-footer">
-            <div class="brand-status" style="width: max-content;">
-                <span class="status-pulse" aria-hidden="true"></span>
-                <span>Available for Full-time & Freelance</span>
+            <div class="nav-status-pill" style="width: max-content;">
+                <span class="status-dot" aria-hidden="true"></span>
+                <span>Available for New Projects</span>
             </div>
-            <a href="#contact" class="btn btn-primary drawer-close-trigger" style="width: 100%;">
-                <span>Get In Touch</span>
-                <i class="fas fa-arrow-right" aria-hidden="true"></i>
+            <a href="#contact" class="btn-pill-cta drawer-close-trigger" style="width: 100%; justify-content: center;">
+                <span>Let's Talk</span>
+                <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
             </a>
         </div>
     </div>
 
     <main>
         <!-- ===================================================================
-             HERO SECTION
+             HERO SECTION (ALIGNED WITH REFERENCE IMAGE 1)
              =================================================================== -->
         <section id="hero" class="hero-section">
-            <div class="hero-bg-grid" aria-hidden="true"></div>
-            <div class="container">
-                <div class="hero-grid">
-                    <div class="hero-content reveal">
-                        <div class="hero-eyebrow-wrapper">
-                            <span class="hero-badge">00 // FULL STACK & WORKFLOW SYSTEMS ENGINEER</span>
-                            <span class="tech-tag">MERN & AGENTIC AI</span>
-                        </div>
+            <!-- Giant Typography Across Background -->
+            <div class="hero-giant-typography reveal">
+                <span class="outline-word">AT</span>
+                <span class="solid-word">ABHIJITH</span>
+            </div>
 
-                        <h1 class="hero-headline">
-                            Hi, I'm Abhijith.
-                            <span class="hero-highlight">I build modern web applications from interface to infrastructure.</span>
-                        </h1>
-
-                        <p class="hero-description">
-                            Full-stack engineer specializing in the MERN stack, workflow automation platforms, agentic AI systems, and Node sidecar integrations for high-performance digital products.
-                        </p>
-
-                        <div class="hero-actions">
-                            <a href="#projects" class="btn btn-primary">
-                                <span>Explore Selected Work</span>
-                                <i class="fas fa-arrow-down" aria-hidden="true"></i>
-                            </a>
-                            <a href="#contact" class="btn btn-secondary">
-                                <span>Contact Me</span>
-                                <i class="fas fa-arrow-right" aria-hidden="true"></i>
-                            </a>
-                        </div>
-
-                        <div class="hero-tech-row">
-                            <span class="tech-tag">MERN Stack</span>
-                            <span class="tech-tag">Agentic AI</span>
-                            <span class="tech-tag">Workflow Engines</span>
-                            <span class="tech-tag">Node Sidecars</span>
-                            <span class="tech-tag">Data Transformation</span>
-                            <span class="tech-tag">REST APIs</span>
-                        </div>
-                    </div>
-
-                    <div class="hero-visual reveal reveal-delay-2">
-                        <div class="portrait-composition">
-                            <div class="portrait-backdrop-circle" aria-hidden="true"></div>
-                            <div class="portrait-frame-corners" aria-hidden="true"></div>
-                            <picture>
-                                <source srcset="images/abhijith-monochrome.webp" type="image/webp">
-                                <img src="images/abhijith-monochrome.png" alt="A T Abhijith — Full Stack & AI Systems Engineer Portrait" class="hero-portrait-img" width="480" height="570" fetchpriority="high">
-                            </picture>
-                        </div>
-                    </div>
+            <!-- 3-Column Stage Alignment: Left Info | Center Portrait | Right Socials -->
+            <div class="container hero-stage-grid">
+                <!-- Left Column -->
+                <div class="hero-left-block reveal reveal-delay-1">
+                    <h1 class="hero-role-title">Full Stack & AI Systems Engineer</h1>
+                    <p class="hero-role-desc">
+                        Designing digital web applications, agentic AI workflows, and Node sidecar integrations that are clear, scalable, and conversion focused.
+                    </p>
+                    <a href="#contact" class="btn-hero-cta">
+                        <span>Let's collaborate</span>
+                        <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                    </a>
                 </div>
 
-                <div class="hero-footer-bar">
-                    <div class="scroll-indicator">
-                        <span class="scroll-line" aria-hidden="true"></span>
-                        <span>SCROLL TO EXPLORE</span>
+                <!-- Center Column: Monochrome Portrait -->
+                <div class="hero-center-portrait-wrapper reveal">
+                    <picture>
+                        <source srcset="images/abhijith-monochrome.webp" type="image/webp">
+                        <img src="images/abhijith-monochrome.png" alt="A T Abhijith — Full Stack & AI Systems Engineer Portrait" class="hero-portrait-image" width="440" height="540" fetchpriority="high">
+                    </picture>
+                </div>
+
+                <!-- Right Column: Stacked Social Pills -->
+                <div class="hero-right-socials reveal reveal-delay-2">
+                    <a href="https://github.com/4bjith" target="_blank" rel="noopener noreferrer" class="social-pill-link" aria-label="View GitHub Profile">
+                        <i class="fab fa-github" aria-hidden="true"></i>
+                        <span>GitHub</span>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/abhijith-4bjith" target="_blank" rel="noopener noreferrer" class="social-pill-link" aria-label="Connect on LinkedIn">
+                        <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                        <span>LinkedIn</span>
+                    </a>
+
+                    <a href="https://www.instagram.com/_._4b_jith_._/" target="_blank" rel="noopener noreferrer" class="social-pill-link" aria-label="Follow on Instagram">
+                        <i class="fab fa-instagram" aria-hidden="true"></i>
+                        <span>Instagram</span>
+                    </a>
+
+                    <button type="button" class="social-pill-link" id="hero-email-pill" aria-label="Copy direct email address">
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                        <span>Email</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================================================================
+             SELECTED WORK SECTION (ALIGNED WITH REFERENCE IMAGE 2)
+             =================================================================== -->
+        <section id="projects" class="section projects-section">
+            <div class="container">
+                <!-- Watermark Header -->
+                <div class="section-watermark-header reveal">
+                    <span class="watermark-bg-text" aria-hidden="true">PORTFOLIO</span>
+                    <h2 class="watermark-foreground-title">/SELECTED WORK</h2>
+                </div>
+
+                <!-- Filter Tabs & Action Bar -->
+                <div class="projects-filter-bar reveal">
+                    <div class="projects-tab-group" role="tablist" aria-label="Project Categories">
+                        <button type="button" class="btn-project-tab active" data-project-filter="all">All</button>
+                        <button type="button" class="btn-project-tab" data-project-filter="fullstack">MERN Platforms</button>
+                        <button type="button" class="btn-project-tab" data-project-filter="dashboards">Dashboards & Mobility</button>
                     </div>
-                    <div>
-                        <span>📍 INDIA • AVAILABLE FOR REMOTE & ON-SITE ROLES</span>
+
+                    <a href="https://github.com/4bjith" target="_blank" rel="noopener noreferrer" class="btn-view-all-work">
+                        <span>View All Work</span>
+                        <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+                <!-- 2-Column Editorial Grid -->
+                <div class="projects-editorial-grid">
+                    <!-- Project 01: TrendQuik -->
+                    <article class="editorial-project-card reveal" data-project="trendquik" data-cat="fullstack">
+                        <div class="editorial-media-wrapper">
+                            <span class="project-card-badge">MERN STACK</span>
+                            <picture>
+                                <source srcset="images/trendquik.webp" type="image/webp">
+                                <img src="images/trendquik.png" alt="TrendQuik e-Commerce Platform Interface" class="editorial-project-img" loading="lazy">
+                            </picture>
+                            <div class="floating-circle-arrow" aria-hidden="true">
+                                <i class="fas fa-arrow-up-right-from-square"></i>
+                            </div>
+                        </div>
+
+                        <div class="editorial-card-content">
+                            <h3 class="editorial-card-title">TrendQuik — Modern E-Commerce Platform</h3>
+                            <p class="editorial-card-desc">
+                                High-performance online retail platform with dynamic category filtering, instant product search, real-time cart state, and responsive checkout.
+                            </p>
+                            <div class="editorial-pill-row">
+                                <span class="project-pill-tag">React.js</span>
+                                <span class="project-pill-tag">Node.js</span>
+                                <span class="project-pill-tag">Express.js</span>
+                                <span class="project-pill-tag">MongoDB</span>
+                                <span class="project-pill-tag">Tailwind CSS</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 02: Voyago -->
+                    <article class="editorial-project-card reveal reveal-delay-1" data-project="voyago" data-cat="dashboards">
+                        <div class="editorial-media-wrapper">
+                            <span class="project-card-badge">MOBILITY & MAPS</span>
+                            <picture>
+                                <source srcset="images/voyago.webp" type="image/webp">
+                                <img src="images/voyago.png" alt="Voyago Ride Sharing Web App" class="editorial-project-img" loading="lazy">
+                            </picture>
+                            <div class="floating-circle-arrow" aria-hidden="true">
+                                <i class="fas fa-arrow-up-right-from-square"></i>
+                            </div>
+                        </div>
+
+                        <div class="editorial-card-content">
+                            <h3 class="editorial-card-title">Voyago — Ride-Sharing Web Application</h3>
+                            <p class="editorial-card-desc">
+                                Urban mobility platform featuring interactive map destination routing, automated distance fare calculation, and account authentication.
+                            </p>
+                            <div class="editorial-pill-row">
+                                <span class="project-pill-tag">React.js</span>
+                                <span class="project-pill-tag">Node.js</span>
+                                <span class="project-pill-tag">Express.js</span>
+                                <span class="project-pill-tag">Leaflet Maps</span>
+                                <span class="project-pill-tag">REST API</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 03: Voyago Driver Dashboard -->
+                    <article class="editorial-project-card reveal" data-project="voyago-driver" data-cat="dashboards">
+                        <div class="editorial-media-wrapper">
+                            <span class="project-card-badge">OPERATIONS & ANALYTICS</span>
+                            <picture>
+                                <source srcset="images/voyago-driver.webp" type="image/webp">
+                                <img src="images/voyago-driver.png" alt="Voyago Driver Operations Dashboard" class="editorial-project-img" loading="lazy">
+                            </picture>
+                            <div class="floating-circle-arrow" aria-hidden="true">
+                                <i class="fas fa-arrow-up-right-from-square"></i>
+                            </div>
+                        </div>
+
+                        <div class="editorial-card-content">
+                            <h3 class="editorial-card-title">Voyago Driver — Operations Dashboard</h3>
+                            <p class="editorial-card-desc">
+                                Comprehensive driver operations console featuring real-time trip queue management, earnings analytics charts, and availability controls.
+                            </p>
+                            <div class="editorial-pill-row">
+                                <span class="project-pill-tag">React.js</span>
+                                <span class="project-pill-tag">Node.js</span>
+                                <span class="project-pill-tag">Express.js</span>
+                                <span class="project-pill-tag">Chart.js</span>
+                                <span class="project-pill-tag">Tailwind CSS</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================================================================
+             SERVICES SECTION (ALIGNED WITH REFERENCE IMAGE 3)
+             =================================================================== -->
+        <section id="services" class="section services-section">
+            <div class="container">
+                <!-- Watermark Header -->
+                <div class="section-watermark-header reveal">
+                    <span class="watermark-bg-text" aria-hidden="true">SERVICES</span>
+                    <h2 class="watermark-foreground-title">/SERVICE</h2>
+                </div>
+
+                <!-- Interactive Accordion List -->
+                <div class="services-interactive-list reveal">
+                    <!-- Service 01 (Active by default) -->
+                    <div class="service-accordion-item active" tabindex="0" role="button" aria-expanded="true">
+                        <div class="service-accordion-header">
+                            <h3 class="service-accordion-title">FULL STACK WEB DEVELOPMENT</h3>
+                            <span class="service-accordion-icon"><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></span>
+                        </div>
+                        <div class="service-accordion-body">
+                            <div class="service-body-grid">
+                                <p class="service-body-text">
+                                    Engineering complete, production-ready web applications using the MERN stack (MongoDB, Express, React, Node.js). Managing responsive client-side interfaces and resilient backend systems.
+                                </p>
+                                <div class="service-tags-box">
+                                    <span class="service-body-pill">MERN Architecture</span>
+                                    <span class="service-body-pill">Authentication</span>
+                                    <span class="service-body-pill">Deployment</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 02 -->
+                    <div class="service-accordion-item" tabindex="0" role="button" aria-expanded="false">
+                        <div class="service-accordion-header">
+                            <h3 class="service-accordion-title">AI WORKFLOW AUTOMATION & CONNECTORS</h3>
+                            <span class="service-accordion-icon"><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></span>
+                        </div>
+                        <div class="service-accordion-body">
+                            <div class="service-body-grid">
+                                <p class="service-body-text">
+                                    Building automated workflow engines inspired by n8n architecture, agentic AI task execution, custom API connectors, and structured data transformation pipelines.
+                                </p>
+                                <div class="service-tags-box">
+                                    <span class="service-body-pill">Agentic AI</span>
+                                    <span class="service-body-pill">Workflow Engines</span>
+                                    <span class="service-body-pill">Data Pipelines</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 03 -->
+                    <div class="service-accordion-item" tabindex="0" role="button" aria-expanded="false">
+                        <div class="service-accordion-header">
+                            <h3 class="service-accordion-title">NODE SIDECARS & SYSTEM INTEGRATIONS</h3>
+                            <span class="service-accordion-icon"><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></span>
+                        </div>
+                        <div class="service-accordion-body">
+                            <div class="service-body-grid">
+                                <p class="service-body-text">
+                                    Developing lightweight Node.js sidecar services that allow client web applications to securely interface with local user filesystems, directories, and databases.
+                                </p>
+                                <div class="service-tags-box">
+                                    <span class="service-body-pill">Node Sidecars</span>
+                                    <span class="service-body-pill">Local DB & Filesystem</span>
+                                    <span class="service-body-pill">IPC Messaging</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 04 -->
+                    <div class="service-accordion-item" tabindex="0" role="button" aria-expanded="false">
+                        <div class="service-accordion-header">
+                            <h3 class="service-accordion-title">FRONTEND ENGINEERING & UI SYSTEMS</h3>
+                            <span class="service-accordion-icon"><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></span>
+                        </div>
+                        <div class="service-accordion-body">
+                            <div class="service-body-grid">
+                                <p class="service-body-text">
+                                    Crafting pixel-perfect, accessible, and high-performance interfaces with React, Next.js, and modern CSS, focusing on tactile interactions and responsive precision.
+                                </p>
+                                <div class="service-tags-box">
+                                    <span class="service-body-pill">React & Next.js</span>
+                                    <span class="service-body-pill">Tailwind & CSS</span>
+                                    <span class="service-body-pill">Accessibility</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 05 -->
+                    <div class="service-accordion-item" tabindex="0" role="button" aria-expanded="false">
+                        <div class="service-accordion-header">
+                            <h3 class="service-accordion-title">BACKEND APIS & DATABASE ARCHITECTURE</h3>
+                            <span class="service-accordion-icon"><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></span>
+                        </div>
+                        <div class="service-accordion-body">
+                            <div class="service-body-grid">
+                                <p class="service-body-text">
+                                    Architecting scalable RESTful endpoints, JSON validation schemas, database models, and structured middleware using Node.js, Express, and MongoDB.
+                                </p>
+                                <div class="service-tags-box">
+                                    <span class="service-body-pill">REST APIs</span>
+                                    <span class="service-body-pill">MongoDB Schemas</span>
+                                    <span class="service-body-pill">Data Validation</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -177,10 +397,10 @@
              =================================================================== -->
         <section id="about" class="section about-section">
             <div class="container">
-                <header class="section-header reveal">
-                    <div class="section-eyebrow"><span class="index">01 //</span> ABOUT ME</div>
-                    <h2 class="section-title">The Mindset & The Craft</h2>
-                </header>
+                <div class="section-watermark-header reveal">
+                    <span class="watermark-bg-text" aria-hidden="true">ABOUT</span>
+                    <h2 class="watermark-foreground-title">/ABOUT ME</h2>
+                </div>
 
                 <div class="about-grid">
                     <div class="about-narrative reveal reveal-delay-1">
@@ -239,166 +459,25 @@
         </section>
 
         <!-- ===================================================================
-             SELECTED WORK / PROJECTS SECTION
-             =================================================================== -->
-        <section id="projects" class="section projects-section">
-            <div class="container">
-                <header class="section-header reveal">
-                    <div class="section-eyebrow"><span class="index">02 //</span> SELECTED WORK</div>
-                    <h2 class="section-title">Featured Projects</h2>
-                    <p class="section-subtitle">A curated selection of full-stack web applications engineered for performance, usability, and scale.</p>
-                </header>
-
-                <div class="projects-container">
-                    <!-- Project 01: TrendQuik -->
-                    <article class="project-card reveal" data-project="trendquik">
-                        <div class="project-media" tabindex="0" role="button" aria-label="View TrendQuik Case Study">
-                            <picture>
-                                <source srcset="images/trendquik.webp" type="image/webp">
-                                <img src="images/trendquik.png" alt="TrendQuik e-Commerce Platform Interface" class="project-img" loading="lazy">
-                            </picture>
-                            <div class="project-media-overlay">
-                                <span class="media-tag">Click for Project Details</span>
-                            </div>
-                        </div>
-
-                        <div class="project-info">
-                            <div class="project-meta-top">
-                                <span class="project-number">PROJECT 01</span>
-                                <span class="project-category">Full Stack E-Commerce</span>
-                            </div>
-                            <h3 class="project-title">TrendQuik — Modern E-Commerce Platform</h3>
-                            <p class="project-desc">
-                                A high-performance online retail platform featuring dynamic category filtering, instant product search, real-time cart state management, and a streamlined responsive checkout interface.
-                            </p>
-                            <div class="project-stack">
-                                <span class="stack-pill">React.js</span>
-                                <span class="stack-pill">Node.js</span>
-                                <span class="stack-pill">Express.js</span>
-                                <span class="stack-pill">MongoDB</span>
-                                <span class="stack-pill">Tailwind CSS</span>
-                                <span class="stack-pill">REST API</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://trend-quick.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                                    <span>Live Site</span>
-                                    <i class="fas fa-external-link-alt" aria-hidden="true"></i>
-                                </a>
-                                <a href="https://github.com/4bjith/E-Commerce" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-                                    <span>View Code</span>
-                                    <i class="fab fa-github" aria-hidden="true"></i>
-                                </a>
-                                <button type="button" class="btn btn-outline btn-case-study" data-project="trendquik">
-                                    <span>Case Study</span>
-                                </button>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Project 02: Voyago -->
-                    <article class="project-card reversed reveal" data-project="voyago">
-                        <div class="project-media" tabindex="0" role="button" aria-label="View Voyago Case Study">
-                            <picture>
-                                <source srcset="images/voyago.webp" type="image/webp">
-                                <img src="images/voyago.png" alt="Voyago Ride Sharing Web App" class="project-img" loading="lazy">
-                            </picture>
-                            <div class="project-media-overlay">
-                                <span class="media-tag">Click for Project Details</span>
-                            </div>
-                        </div>
-
-                        <div class="project-info">
-                            <div class="project-meta-top">
-                                <span class="project-number">PROJECT 02</span>
-                                <span class="project-category">Mobility & Real-Time Booking</span>
-                            </div>
-                            <h3 class="project-title">Voyago — Ride-Sharing Web App</h3>
-                            <p class="project-desc">
-                                An Uber-inspired ride-sharing web application engineered to simplify urban transit. Incorporates map destination selection, fare calculation, driver discovery workflows, and user authentication.
-                            </p>
-                            <div class="project-stack">
-                                <span class="stack-pill">React.js</span>
-                                <span class="stack-pill">Node.js</span>
-                                <span class="stack-pill">Express.js</span>
-                                <span class="stack-pill">MongoDB</span>
-                                <span class="stack-pill">Leaflet Maps</span>
-                                <span class="stack-pill">REST API</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/4bjith/Uber-frontend" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                                    <span>View Code</span>
-                                    <i class="fab fa-github" aria-hidden="true"></i>
-                                </a>
-                                <button type="button" class="btn btn-outline btn-case-study" data-project="voyago">
-                                    <span>Case Study</span>
-                                </button>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Project 03: Voyago Driver Dashboard -->
-                    <article class="project-card reveal" data-project="voyago-driver">
-                        <div class="project-media" tabindex="0" role="button" aria-label="View Voyago Driver Case Study">
-                            <picture>
-                                <source srcset="images/voyago-driver.webp" type="image/webp">
-                                <img src="images/voyago-driver.png" alt="Voyago Driver Operations Dashboard" class="project-img" loading="lazy">
-                            </picture>
-                            <div class="project-media-overlay">
-                                <span class="media-tag">Click for Project Details</span>
-                            </div>
-                        </div>
-
-                        <div class="project-info">
-                            <div class="project-meta-top">
-                                <span class="project-number">PROJECT 03</span>
-                                <span class="project-category">Operations & Analytics</span>
-                            </div>
-                            <h3 class="project-title">Voyago Driver — Management Dashboard</h3>
-                            <p class="project-desc">
-                                A dedicated driver operations interface for managing incoming ride requests, route monitoring, trip history, daily earnings metrics, and availability status controls.
-                            </p>
-                            <div class="project-stack">
-                                <span class="stack-pill">React.js</span>
-                                <span class="stack-pill">Node.js</span>
-                                <span class="stack-pill">Express.js</span>
-                                <span class="stack-pill">MongoDB</span>
-                                <span class="stack-pill">Chart.js</span>
-                                <span class="stack-pill">Tailwind CSS</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/4bjith/Uber-Driver" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                                    <span>View Code</span>
-                                    <i class="fab fa-github" aria-hidden="true"></i>
-                                </a>
-                                <button type="button" class="btn btn-outline btn-case-study" data-project="voyago-driver">
-                                    <span>Case Study</span>
-                                </button>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- ===================================================================
              TECHNICAL SKILLS SECTION
              =================================================================== -->
         <section id="skills" class="section skills-section">
             <div class="container">
-                <header class="section-header reveal">
-                    <div class="section-eyebrow"><span class="index">03 //</span> EXPERTISE</div>
-                    <h2 class="section-title">Tools & Technologies</h2>
-                    <p class="section-subtitle">A comprehensive breakdown of my engineering toolkit across full-stack development, agentic AI, workflow engines, and system architecture.</p>
-                </header>
+                <div class="section-watermark-header reveal">
+                    <span class="watermark-bg-text" aria-hidden="true">EXPERTISE</span>
+                    <h2 class="watermark-foreground-title">/SKILLS MATRIX</h2>
+                </div>
 
-                <nav class="skills-filter-nav reveal" aria-label="Skills Filter">
-                    <button type="button" class="filter-btn active" data-filter="all">All (22)</button>
-                    <button type="button" class="filter-btn" data-filter="ai">AI & Workflows</button>
-                    <button type="button" class="filter-btn" data-filter="frontend">Frontend</button>
-                    <button type="button" class="filter-btn" data-filter="backend">Backend & DB</button>
-                    <button type="button" class="filter-btn" data-filter="languages">Languages</button>
-                    <button type="button" class="filter-btn" data-filter="tools">Tools</button>
-                </nav>
+                <div class="projects-filter-bar reveal">
+                    <div class="projects-tab-group" role="tablist" aria-label="Skills Filter">
+                        <button type="button" class="btn-project-tab active" data-filter="all">All (22)</button>
+                        <button type="button" class="btn-project-tab" data-filter="ai">AI & Workflows</button>
+                        <button type="button" class="btn-project-tab" data-filter="frontend">Frontend</button>
+                        <button type="button" class="btn-project-tab" data-filter="backend">Backend & DB</button>
+                        <button type="button" class="btn-project-tab" data-filter="languages">Languages</button>
+                        <button type="button" class="btn-project-tab" data-filter="tools">Tools</button>
+                    </div>
+                </div>
 
                 <div class="skills-grid" id="skills-grid">
                     <!-- AI & Workflow Systems -->
@@ -543,138 +622,14 @@
         </section>
 
         <!-- ===================================================================
-             SERVICES SECTION
-             =================================================================== -->
-        <section id="services" class="section services-section">
-            <div class="container">
-                <header class="section-header reveal">
-                    <div class="section-eyebrow"><span class="index">04 //</span> SERVICES</div>
-                    <h2 class="section-title">How I Can Help</h2>
-                    <p class="section-subtitle">Disciplined engineering capabilities tailored for startups, web products, and modern development teams.</p>
-                </header>
-
-                <div class="services-list reveal">
-                    <!-- Service 01 -->
-                    <div class="service-row" tabindex="0" role="button" aria-expanded="false">
-                        <div class="service-summary">
-                            <span class="service-index">01</span>
-                            <h3 class="service-title">Full Stack Web Development</h3>
-                            <p class="service-short-desc">End-to-end web applications built with the MERN stack (MongoDB, Express, React, Node.js).</p>
-                            <span class="service-toggle-icon"><i class="fas fa-plus" aria-hidden="true"></i></span>
-                        </div>
-                        <div class="service-details">
-                            <p>Handling client-side interfaces and backend server architectures to deliver fast, secure, and production-ready web products. I take ideas from concept to deployment with clean architecture.</p>
-                            <div class="service-deliverables">
-                                <span class="deliverable-tag">MERN Architecture</span>
-                                <span class="deliverable-tag">Authentication & Security</span>
-                                <span class="deliverable-tag">Full Lifecycle Deployment</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Service 02 -->
-                    <div class="service-row" tabindex="0" role="button" aria-expanded="false">
-                        <div class="service-summary">
-                            <span class="service-index">02</span>
-                            <h3 class="service-title">AI Workflow Automation & Connectors</h3>
-                            <p class="service-short-desc">Designing custom workflow automation pipelines, agentic execution, and data transformation integrations.</p>
-                            <span class="service-toggle-icon"><i class="fas fa-plus" aria-hidden="true"></i></span>
-                        </div>
-                        <div class="service-details">
-                            <p>Building automated workflow engines inspired by n8n architecture, agentic AI connectors, and structured data transformation pipelines to streamline operations and bridge diverse web services.</p>
-                            <div class="service-deliverables">
-                                <span class="deliverable-tag">Agentic AI Workflows</span>
-                                <span class="deliverable-tag">Custom Connectors</span>
-                                <span class="deliverable-tag">Data Transformation Pipelines</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Service 03 -->
-                    <div class="service-row" tabindex="0" role="button" aria-expanded="false">
-                        <div class="service-summary">
-                            <span class="service-index">03</span>
-                            <h3 class="service-title">Node Sidecars & Local System Integrations</h3>
-                            <p class="service-short-desc">Developing lightweight Node sidecars to securely query host files, folders, and local databases.</p>
-                            <span class="service-toggle-icon"><i class="fas fa-plus" aria-hidden="true"></i></span>
-                        </div>
-                        <div class="service-details">
-                            <p>Engineering secure Node.js sidecar services that bridge client web interfaces with host filesystem and database resources, enabling safe and direct local workflows.</p>
-                            <div class="service-deliverables">
-                                <span class="deliverable-tag">Node Sidecar Services</span>
-                                <span class="deliverable-tag">Local DB & Filesystem Access</span>
-                                <span class="deliverable-tag">IPC & Secure Messaging</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Service 04 -->
-                    <div class="service-row" tabindex="0" role="button" aria-expanded="false">
-                        <div class="service-summary">
-                            <span class="service-index">04</span>
-                            <h3 class="service-title">Frontend Engineering & UI Systems</h3>
-                            <p class="service-short-desc">Responsive, interactive, and accessible web interfaces crafted with React.js & modern CSS.</p>
-                            <span class="service-toggle-icon"><i class="fas fa-plus" aria-hidden="true"></i></span>
-                        </div>
-                        <div class="service-details">
-                            <p>Building pixel-perfect web interfaces that provide smooth micro-interactions, excellent cross-browser responsiveness, and rapid load times.</p>
-                            <div class="service-deliverables">
-                                <span class="deliverable-tag">React & Next.js Components</span>
-                                <span class="deliverable-tag">Tailwind & Vanilla CSS</span>
-                                <span class="deliverable-tag">Responsive Optimization</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Service 05 -->
-                    <div class="service-row" tabindex="0" role="button" aria-expanded="false">
-                        <div class="service-summary">
-                            <span class="service-index">05</span>
-                            <h3 class="service-title">Backend & REST APIs</h3>
-                            <p class="service-short-desc">Secure, structured server-side logic and database architecture using Node.js & Express.</p>
-                            <span class="service-toggle-icon"><i class="fas fa-plus" aria-hidden="true"></i></span>
-                        </div>
-                        <div class="service-details">
-                            <p>Architecting scalable RESTful endpoints, JSON validation, database models, and structured middleware that keep web applications running reliably.</p>
-                            <div class="service-deliverables">
-                                <span class="deliverable-tag">Node / Express APIs</span>
-                                <span class="deliverable-tag">MongoDB Schemas</span>
-                                <span class="deliverable-tag">Data Validation</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Service 06 -->
-                    <div class="service-row" tabindex="0" role="button" aria-expanded="false">
-                        <div class="service-summary">
-                            <span class="service-index">06</span>
-                            <h3 class="service-title">Web App Testing & QA</h3>
-                            <p class="service-short-desc">Ensuring stability, responsiveness, and performance across various devices and platforms.</p>
-                            <span class="service-toggle-icon"><i class="fas fa-plus" aria-hidden="true"></i></span>
-                        </div>
-                        <div class="service-details">
-                            <p>Rigorous multi-device audits, responsive checks from 320px to 4K displays, performance profiling, and bug resolution to ensure flawless delivery.</p>
-                            <div class="service-deliverables">
-                                <span class="deliverable-tag">Cross-Browser QA</span>
-                                <span class="deliverable-tag">Responsive Auditing</span>
-                                <span class="deliverable-tag">Performance Profiling</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ===================================================================
              JOURNEY & TIMELINE SECTION
              =================================================================== -->
         <section id="journey" class="section journey-section">
             <div class="container">
-                <header class="section-header reveal">
-                    <div class="section-eyebrow"><span class="index">05 //</span> TIMELINE</div>
-                    <h2 class="section-title">Journey & Experience</h2>
-                    <p class="section-subtitle">Professional progression across full-stack development, AI workflow automation, and systems architecture.</p>
-                </header>
+                <div class="section-watermark-header reveal">
+                    <span class="watermark-bg-text" aria-hidden="true">TIMELINE</span>
+                    <h2 class="watermark-foreground-title">/EXPERIENCE</h2>
+                </div>
 
                 <div class="timeline-list reveal">
                     <div class="timeline-item">
@@ -695,16 +650,18 @@
                         </p>
                     </div>
                 </div>
+            </div>
+        </section>
+
         <!-- ===================================================================
              CONTACT & CTA SECTION
              =================================================================== -->
         <section id="contact" class="section contact-section">
             <div class="container">
-                <header class="section-header reveal">
-                    <div class="section-eyebrow"><span class="index">06 //</span> GET IN TOUCH</div>
-                    <h2 class="section-title">Let's Build Something Useful</h2>
-                    <p class="section-subtitle">Have a project in mind, an engineering role to discuss, or want to collaborate? Feel free to reach out.</p>
-                </header>
+                <div class="section-watermark-header reveal">
+                    <span class="watermark-bg-text" aria-hidden="true">CONTACT</span>
+                    <h2 class="watermark-foreground-title">/GET IN TOUCH</h2>
+                </div>
 
                 <div class="contact-grid">
                     <!-- Left: Direct Channels -->
@@ -761,7 +718,7 @@
                                 <textarea id="contact-message" name="message" class="form-textarea" placeholder="Tell me about your project, role, or ideas..." rows="4" required></textarea>
                             </div>
 
-                            <button type="submit" class="btn btn-primary" id="btn-submit-form" style="width: 100%;">
+                            <button type="submit" class="btn-hero-cta" id="btn-submit-form" style="width: 100%; justify-content: center;">
                                 <span>Send Message</span>
                                 <i class="fas fa-paper-plane" aria-hidden="true"></i>
                             </button>
@@ -782,7 +739,7 @@
             <div class="footer-top-row">
                 <div class="footer-brand">
                     <span class="footer-logo">AT.</span>
-                    <span class="footer-tagline">Abhijith — Full Stack Web Developer</span>
+                    <span class="footer-tagline">Abhijith — Full Stack & AI Systems Engineer</span>
                 </div>
                 <button type="button" class="btn-back-to-top" id="btn-back-to-top" aria-label="Scroll back to top">
                     <span>Back to Top</span>
