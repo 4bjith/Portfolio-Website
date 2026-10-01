@@ -116,7 +116,120 @@ document.addEventListener('DOMContentLoaded', () => {
     initNav();
     initForm();
     initThemeToggle();
+    initTypewriter();
+    initScrollReveal();
 });
+
+// ===========================
+// Typewriter Animation
+// ===========================
+const initTypewriter = () => {
+    const titleEl = document.getElementById('typewriter-title');
+    const subEl = document.getElementById('typewriter-sub');
+    const descEl = document.getElementById('typewriter-desc');
+
+    if (!titleEl || !subEl || !descEl) return;
+
+    const titleText = 'DEVELOPER';
+    const subText = 'Full Stack Web Developer';
+    const descText = 'Building pixel-perfect, engaging, and accessible digital experiences.';
+    const speed = 70;   // ms per character
+    const pause = 1800; // pause before moving to next line (ms)
+
+    // Helper: type a string into an element character by character
+    const typeText = (el, text, onDone, charSpeed = speed) => {
+        el.innerHTML = '';
+        let i = 0;
+        const tick = () => {
+            if (i < text.length) {
+                // Wrap bold for "Full Stack" in the sub line
+                el.textContent += text[i];
+                i++;
+                setTimeout(tick, charSpeed);
+            } else {
+                if (onDone) setTimeout(onDone, pause);
+            }
+        };
+        tick();
+    };
+
+    // Special version that bolds "Full Stack " prefix
+    const typeSubText = (el, onDone) => {
+        el.innerHTML = '';
+        const boldPart = 'Full Stack ';
+        const plainPart = 'Web Developer';
+        const fullText = boldPart + plainPart;
+        let i = 0;
+        const tick = () => {
+            if (i < fullText.length) {
+                const typed = fullText.slice(0, i + 1);
+                const boldTyped = typed.slice(0, Math.min(i + 1, boldPart.length));
+                const plainTyped = typed.slice(boldPart.length);
+                el.innerHTML = `<b>${boldTyped}</b>${plainTyped}`;
+                i++;
+                setTimeout(tick, speed);
+            } else {
+                if (onDone) setTimeout(onDone, pause);
+            }
+        };
+        tick();
+    };
+
+    // Chain: title → sub → desc, then loop title only (sub & desc stay)
+    const startSequence = (loopTitle = false) => {
+        if (!loopTitle) {
+            // First run: type all three lines in sequence
+            typeText(titleEl, titleText, () => {
+                typeSubText(subEl, () => {
+                    typeText(descEl, descText, () => {
+                        loopTitleForever();
+                    });
+                });
+            });
+        } else {
+            loopTitleForever();
+        }
+    };
+
+    const loopTitleForever = () => {
+        // Erase then retype title on loop
+        let text = titleText;
+        let i = text.length;
+        const erase = () => {
+            if (i > 0) {
+                titleEl.textContent = text.slice(0, --i);
+                setTimeout(erase, 45);
+            } else {
+                setTimeout(() => typeText(titleEl, text, () => loopTitleForever()), 400);
+            }
+        };
+        setTimeout(erase, 2500);
+    };
+
+    startSequence(false);
+};
+
+// ===========================
+// Scroll Reveal (Intersection Observer)
+// ===========================
+const initScrollReveal = () => {
+    const elements = document.querySelectorAll('.scroll-reveal');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                // Once revealed, stop observing (keep visible)
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.12,   // trigger when 12% of element is visible
+        rootMargin: '0px 0px -40px 0px'
+    });
+
+    elements.forEach(el => observer.observe(el));
+};
 
 // Theme Toggle (Dark / Light Mode)
 const initThemeToggle = () => {

@@ -709,3 +709,51 @@ body {
         grid-template-columns: 1fr;
     }
 }
+
+/* ===========================
+   Scroll Reveal Animations
+=========================== */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.scroll-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-delay-1 {
+    transition-delay: 0.1s;
+}
+
+.reveal-delay-2 {
+    transition-delay: 0.2s;
+}
+
+.reveal-delay-3 {
+    transition-delay: 0.35s;
+}
+
+/* ===========================
+   Typewriter Animation
+=========================== */
+.typewriter-cursor {
+    display: inline-block;
+    color: var(--primary-color);
+    font-weight: 300;
+    animation: blink 0.75s step-end infinite;
+    margin-left: 2px;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Keep sub-lines invisible until JS fills them */
+.typewriter-line {
+    min-height: 1.4em;
+}
