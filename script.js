@@ -7,56 +7,89 @@
 // 1. DATA STORE: DETAILED PROJECT CASE STUDIES
 // ==========================================================================
 const PROJECT_DATA = {
-    'trendquik': {
-        title: 'TrendQuik — Modern E-Commerce Platform',
+    'trendquick': {
+        title: 'TrendQuick — Modern E-Commerce Platform',
         category: 'Full Stack E-Commerce • MERN',
-        overview: 'TrendQuik is a high-performance e-commerce platform engineered with the MERN stack. It delivers a fast, intuitive shopping experience with dynamic catalog browsing, instant search, responsive cart workflows, and streamlined checkout.',
-        challenge: 'Creating a snappy, responsive shopping interface that handles complex product filtering, real-time cart calculations, and responsive multi-device navigation without performance degradation.',
-        solution: 'Built a modular component structure in React with utility CSS styling, backed by structured Express REST APIs and indexed MongoDB collections for fast catalog queries.',
+        overview: 'TrendQuick is a high-performance e-commerce platform engineered with React 18, Vite, and Tailwind CSS, backed by a companion Node/Express REST API. It delivers a fast, intuitive shopping experience with dynamic catalog browsing, instant client-side search, persistent cart state via Zustand, and wishlist management.',
+        challenge: 'Creating a responsive, distraction-free shopping interface that handles dynamic multi-parameter filtering, real-time cart state synchronization across page reloads, and fast catalog discovery without layout shifts.',
+        solution: 'Built a modular component architecture in React 18 with Zustand for lightweight state management and persistent session storage, integrated with Axios and React Query for caching, backed by indexed MongoDB collections and Express REST endpoints.',
         features: [
-            'Dynamic category, price, and tag-based filtering',
-            'Live client-side product search and auto-complete',
-            'Interactive cart state management with persistent session storage',
-            'Mobile-first responsive product gallery and order summary flow',
-            'RESTful API architecture handling products, categories, and orders'
+            'Dynamic category, price, and tag-based product filtering',
+            'Live client-side product search and instant catalog auto-filtering',
+            'Zustand-powered persistent cart and wishlist state handling',
+            'Mobile-first responsive product grid with quick view and rating indicators',
+            'Structured RESTful API handling products, categories, user profiles, and orders'
         ],
-        stack: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Tailwind CSS', 'REST API'],
+        stack: ['React 18', 'Node.js', 'Express.js', 'MongoDB', 'Tailwind CSS', 'Zustand', 'React Query', 'REST API'],
         liveUrl: 'https://trend-quick.vercel.app/',
-        githubUrl: 'https://github.com/4bjith/E-Commerce'
+        liveLabel: 'Visit Live Store',
+        githubUrl: 'https://github.com/4bjith/TrendQuick',
+        githubLabel: 'View Repository'
     },
     'voyago': {
-        title: 'Voyago — Ride-Sharing Web Application',
-        category: 'Mobility & Real-Time Booking',
-        overview: 'Voyago is an urban mobility platform inspired by ride-sharing services like Uber. It connects riders with transportation options through interactive maps, destination selection, and automated fare calculation.',
-        challenge: 'Designing a smooth ride booking workflow with location selection, dynamic fare estimation based on transit parameters, and clean rider state management.',
-        solution: 'Developed an intuitive map-driven user flow with Leaflet integration, modular React state for transit parameters, and secure server-side logic in Express.',
+        title: 'Voyago — Urban Mobility & Driver Operations Platform',
+        category: 'Real-Time Mobility & WebSockets • MERN',
+        overview: 'Voyago is an urban mobility ecosystem connecting passengers and drivers. It combines an interactive map-driven ride-booking web application for riders with a dedicated operations console for drivers to manage trip requests, availability, and earnings.',
+        challenge: 'Coordinating bidirectional communication between passenger ride requests and driver dispatch availability, while providing interactive waypoint selection and responsive distance fare calculation.',
+        solution: 'Developed an interactive map flow using Leaflet Maps for pickup/drop-off waypoint routing, modular React state management for vehicle tiers, real-time dispatch events using Socket.IO, and secure RESTful endpoints in Node/Express.',
         features: [
-            'Interactive map integration for pickup and drop-off selection',
-            'Dynamic fare calculation based on distance and vehicle category',
-            'Real-time ride booking request workflow and trip review',
-            'User profile and authentication state handling',
-            'Clean, modern typography-driven UI tailored for quick mobile and desktop bookings'
+            'Interactive Leaflet map routing with pickup and drop-off waypoint selection',
+            'Dynamic distance fare calculation across vehicle tiers (Voyago Go, Comfort, Lux)',
+            'Real-time ride booking request dispatch and trip state management with Socket.IO',
+            'Driver Operations Console featuring real-time trip queue and availability controls',
+            'Historical trip logs, fare breakdowns, and user profile authentication'
         ],
-        stack: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Leaflet Maps', 'REST API'],
-        liveUrl: null,
-        githubUrl: 'https://github.com/4bjith/Uber-frontend'
+        stack: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Leaflet Maps', 'Socket.IO', 'Tailwind CSS', 'REST API'],
+        liveUrl: 'https://voyago-sandy.vercel.app/',
+        liveLabel: 'Passenger App Demo',
+        secondaryLiveUrl: 'https://uber-driver-sigma.vercel.app/',
+        secondaryLiveLabel: 'Driver Console Demo',
+        githubUrl: 'https://github.com/4bjith/Voyago',
+        githubLabel: 'Passenger Code',
+        secondaryGithubUrl: 'https://github.com/4bjith/Uber-Driver',
+        secondaryGithubLabel: 'Driver Code'
     },
-    'voyago-driver': {
-        title: 'Voyago Driver — Operations Dashboard',
-        category: 'Operations & Fleet Analytics',
-        overview: 'A comprehensive operations portal for drivers in the Voyago ecosystem. Enables drivers to monitor assigned rides, manage real-time availability, and analyze daily and weekly earnings through data visualization.',
-        challenge: 'Presenting dense operational metrics, trip histories, and active request statuses in an accessible, distraction-free dashboard.',
-        solution: 'Engineered an analytics dashboard utilizing responsive data cards, visual trend charts with Chart.js, and immediate status toggles for driver online/offline availability.',
+    'multi-merchant': {
+        title: 'Genmise — Multi-Merchant E-Commerce Platform',
+        category: 'Full Stack & Multi-Tenant Architecture',
+        overview: 'Genmise is a centralized multi-merchant e-commerce platform that empowers independent merchants to establish and run online stores through a unified system. Features a full-stack monorepo foundation with an ongoing Next.js frontend migration.',
+        challenge: 'Architecting a multi-tenant system that cleanly separates merchant store configurations, product catalogs, categories, and orders, while rendering responsive storefront templates for customers.',
+        solution: 'Engineered a modular architecture with Express and MongoDB handling merchant authorization, store tenancy, and inventory models. Built pluggable storefront templates (Templates/template01) and initiated a Next.js App Router frontend migration for enhanced performance and SEO.',
         features: [
-            'Live trip dispatch feed with acceptance and completion controls',
-            'Interactive earnings visualizer and performance breakdown with Chart.js',
-            'Driver online / offline availability switch with immediate feedback',
-            'Historical ride logs with fare breakdowns and trip metrics',
-            'Optimized for rapid tablet and mobile usage during transit'
+            'Merchant onboarding, store creation, and multi-tenant management',
+            'Centralized merchant dashboard for products, categories, and order pipelines',
+            'Modular storefront templates providing customizable customer-facing shopping experiences',
+            'Customer shopping workflows with product discovery, cart state, and order summary',
+            'Modern Next.js App Router frontend migration underway for server-side rendering and performance'
         ],
-        stack: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Chart.js', 'Tailwind CSS'],
+        stack: ['React.js', 'Next.js', 'Node.js', 'Express.js', 'MongoDB', 'Tailwind CSS', 'TypeScript', 'REST API'],
+        liveUrl: 'https://genmise.vercel.app/',
+        liveLabel: 'Visit Live Platform',
+        githubUrl: 'https://github.com/4bjith/GroupProject-OnlineStore',
+        githubLabel: 'Full-Stack Repository',
+        secondaryGithubUrl: 'https://github.com/4bjith/multi-merchant-store-frontend',
+        secondaryGithubLabel: 'Next.js Frontend Repo'
+    },
+    'texly': {
+        title: 'Texly — Real-Time Messaging Application',
+        category: 'Mobile & Real-Time WebSockets • Prototype',
+        overview: 'Texly is a real-time messaging application prototype featuring a cross-platform mobile application in React Native / Expo and a backend service powered by Express.js, Socket.IO, and MySQL. It explores low-latency bi-directional chat and relational data persistence.',
+        challenge: 'Maintaining real-time message delivery and user presence state across mobile clients while ensuring structured conversation history persistence in a relational schema.',
+        solution: 'Implemented an event-driven WebSocket layer with Socket.IO on Node.js, secured by JWT authentication middleware. Designed a normalized MySQL database schema for user accounts, conversation rooms, and persistent message records.',
+        features: [
+            'Real-time bi-directional messaging powered by Socket.IO',
+            'JWT-based user authentication and protected REST API endpoints',
+            'Conversation lists, active online presence indicators, and message delivery states',
+            'Structured MySQL relational database migrations and persistent message storage',
+            'Cross-platform mobile client engineered with React Native, Expo, and TypeScript'
+        ],
+        stack: ['React Native', 'Expo', 'TypeScript', 'Node.js', 'Express.js', 'Socket.IO', 'MySQL', 'JWT'],
+        status: 'In Progress / Prototype',
         liveUrl: null,
-        githubUrl: 'https://github.com/4bjith/Uber-Driver'
+        githubUrl: 'https://github.com/4bjith/Texly-expo-app',
+        githubLabel: 'Mobile Client Code',
+        secondaryGithubUrl: 'https://github.com/4bjith/ChatApp-server',
+        secondaryGithubLabel: 'Server API Code'
     }
 };
 
@@ -260,7 +293,7 @@ function initScrollReveal() {
 // 7. PROJECTS CATEGORY FILTER
 // ==========================================================================
 function initProjectsFilter() {
-    const filterTabs = document.querySelectorAll('.btn-project-tab');
+    const filterTabs = document.querySelectorAll('.projects-filter-bar .projects-tab-group .btn-project-tab');
     const projectCards = document.querySelectorAll('.editorial-project-card');
 
     if (!filterTabs.length || !projectCards.length) return;
@@ -383,8 +416,14 @@ function initCaseStudyModal() {
 
         const featuresHtml = data.features.map(f => `<li>${f}</li>`).join('');
         const stackHtml = data.stack.map(s => `<span class="project-pill-tag">${s}</span>`).join('');
+        const statusHtml = data.status ? `
+            <div style="margin-bottom: 16px;">
+                <span class="project-card-badge" style="position: static; display: inline-block;">${data.status}</span>
+            </div>
+        ` : '';
 
         modalBody.innerHTML = `
+            ${statusHtml}
             <div>
                 <h4 class="modal-section-title">Overview</h4>
                 <p>${data.overview}</p>
@@ -407,15 +446,31 @@ function initCaseStudyModal() {
         if (data.liveUrl) {
             actionsHtml += `
                 <a href="${data.liveUrl}" target="_blank" rel="noopener noreferrer" class="btn-hero-cta">
-                    <span>Visit Live Site</span>
+                    <span>${data.liveLabel || 'Visit Live Site'}</span>
+                    <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                </a>
+            `;
+        }
+        if (data.secondaryLiveUrl) {
+            actionsHtml += `
+                <a href="${data.secondaryLiveUrl}" target="_blank" rel="noopener noreferrer" class="btn-project-tab" style="padding: 10px 20px;">
+                    <span>${data.secondaryLiveLabel || 'Secondary Demo'}</span>
                     <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
                 </a>
             `;
         }
         if (data.githubUrl) {
             actionsHtml += `
-                <a href="${data.githubUrl}" target="_blank" rel="noopener noreferrer" class="btn-project-tab" style="padding: 10px 22px;">
-                    <span>View Repository</span>
+                <a href="${data.githubUrl}" target="_blank" rel="noopener noreferrer" class="btn-project-tab" style="padding: 10px 20px;">
+                    <span>${data.githubLabel || 'View Repository'}</span>
+                    <i class="fab fa-github" aria-hidden="true"></i>
+                </a>
+            `;
+        }
+        if (data.secondaryGithubUrl) {
+            actionsHtml += `
+                <a href="${data.secondaryGithubUrl}" target="_blank" rel="noopener noreferrer" class="btn-project-tab" style="padding: 10px 20px;">
+                    <span>${data.secondaryGithubLabel || 'Secondary Repo'}</span>
                     <i class="fab fa-github" aria-hidden="true"></i>
                 </a>
             `;
